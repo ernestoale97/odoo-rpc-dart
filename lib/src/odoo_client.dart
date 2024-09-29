@@ -201,7 +201,7 @@ class OdooClient {
           throw OdooSessionExpiredException(err);
         } else {
           // Other error
-          final message = result['error']?["data"]?["message"] ?? "";
+          final message = result['error']["data"]["message"].toString();
           final err = result['error'].toString();
           throw OdooException(message, debug: err);
         }
