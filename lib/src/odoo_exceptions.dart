@@ -5,7 +5,8 @@ library;
 class OdooException implements Exception {
   /// Exception message coming from Odoo server.
   String message;
-  OdooException(this.message);
+  String? debug;
+  OdooException(this.message, {this.debug});
 
   @override
   String toString() => 'OdooException: $message';
